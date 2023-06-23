@@ -33,5 +33,12 @@ namespace BackEndApi.Brain
             Brain.CreationPdf.Instance.CreatePageFree();
 
         }
+
+        public void CreationPicture()
+        {
+
+            Brain.CreationPicture.Instance.CreateImage();
+
+        }
     }
 }

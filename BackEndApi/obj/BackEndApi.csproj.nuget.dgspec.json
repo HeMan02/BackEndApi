@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Repo\\BackEndApi\\BackEndApi\\BackEndApi\\BackEndApi.csproj": {}
+    "D:\\Repo\\BackEndApiRepo\\BackEndApi\\BackEndApi.csproj": {}
   },
   "projects": {
-    "D:\\Repo\\BackEndApi\\BackEndApi\\BackEndApi\\BackEndApi.csproj": {
+    "D:\\Repo\\BackEndApiRepo\\BackEndApi\\BackEndApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Repo\\BackEndApi\\BackEndApi\\BackEndApi\\BackEndApi.csproj",
+        "projectUniqueName": "D:\\Repo\\BackEndApiRepo\\BackEndApi\\BackEndApi.csproj",
         "projectName": "BackEndApi",
-        "projectPath": "D:\\Repo\\BackEndApi\\BackEndApi\\BackEndApi\\BackEndApi.csproj",
+        "projectPath": "D:\\Repo\\BackEndApiRepo\\BackEndApi\\BackEndApi.csproj",
         "packagesPath": "C:\\Users\\musso\\.nuget\\packages\\",
-        "outputPath": "D:\\Repo\\BackEndApi\\BackEndApi\\BackEndApi\\obj\\",
+        "outputPath": "D:\\Repo\\BackEndApiRepo\\BackEndApi\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\musso\\AppData\\Roaming\\NuGet\\NuGet.Config",

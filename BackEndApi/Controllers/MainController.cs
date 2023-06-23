@@ -57,5 +57,13 @@ namespace BackEndApi.Controllers
             BubbleMain.Instance.CreationPdf();
             return "value";
         }
+
+        // GET api/<MainController>/5
+        [HttpGet("StartCreationPicture")]
+        public string StartCreationPicture()
+        {
+            BubbleMain.Instance.CreationPicture();
+            return "value";
+        }
     }
 }
