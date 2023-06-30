@@ -1,4 +1,5 @@
 ﻿using BackEndApi.Brain;
+using BackEndApi.PayloadObjects;
 using Microsoft.AspNetCore.Mvc;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
@@ -59,10 +60,11 @@ namespace BackEndApi.Controllers
         }
 
         // GET api/<MainController>/5
-        [HttpGet("StartCreationPicture")]
-        public string StartCreationPicture()
+        [HttpPost("StartCreationPicture")]
+        public string StartCreationPicture([FromForm] inputPayload inputValue)
         {
-            BubbleMain.Instance.CreationPicture();
+            string text = inputValue.inputText;
+            BubbleMain.Instance.CreationPicture(text);
             return "value";
         }
     }

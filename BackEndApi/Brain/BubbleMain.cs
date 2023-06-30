@@ -34,10 +34,10 @@ namespace BackEndApi.Brain
 
         }
 
-        public void CreationPicture()
+        public void CreationPicture(string inputText)
         {
 
-            Brain.CreationPicture.Instance.CreateImage();
+            Brain.CreationPicture.Instance.CreateImageAsync(inputText);
 
         }
     }

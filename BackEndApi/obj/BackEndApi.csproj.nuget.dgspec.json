@@ -13,8 +13,12 @@
         "packagesPath": "C:\\Users\\musso\\.nuget\\packages\\",
         "outputPath": "D:\\Repo\\BackEndApiRepo\\BackEndApi\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Users\\musso\\AppData\\Roaming\\Godot\\mono\\GodotNuGetFallbackFolder"
+        ],
         "configFilePaths": [
           "C:\\Users\\musso\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\musso\\AppData\\Roaming\\NuGet\\config\\Godot.Offline.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -42,7 +46,23 @@
           "dependencies": {
             "GemBox.Document": {
               "target": "Package",
-              "version": "[35.0.1331, )"
+              "version": "[35.0.1403, )"
+            },
+            "Microsoft.Extensions.Configuration": {
+              "target": "Package",
+              "version": "[7.0.0, )"
+            },
+            "Microsoft.Extensions.Configuration.Json": {
+              "target": "Package",
+              "version": "[7.0.0, )"
+            },
+            "Microsoft.Extensions.Configuration.UserSecrets": {
+              "target": "Package",
+              "version": "[7.0.0, )"
+            },
+            "Microsoft.Extensions.Http": {
+              "target": "Package",
+              "version": "[7.0.0, )"
             },
             "MySql.Data": {
               "target": "Package",
@@ -62,7 +82,7 @@
             },
             "Syncfusion.Pdf.Net.Core": {
               "target": "Package",
-              "version": "[21.2.3, )"
+              "version": "[22.1.34, )"
             }
           },
           "imports": [
