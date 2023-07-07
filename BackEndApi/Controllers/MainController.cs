@@ -64,8 +64,9 @@ namespace BackEndApi.Controllers
         public string StartCreationPicture([FromForm] inputPayload inputValue)
         {
             string text = inputValue.inputText;
-            BubbleMain.Instance.CreationPicture(text);
-            return "value";
+            String pathImage = BubbleMain.Instance.CreationPicture(text);
+            String nameFile = Path.GetFileName(pathImage);
+            return nameFile;
         }
     }
 }

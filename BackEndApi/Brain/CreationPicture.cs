@@ -25,7 +25,7 @@ namespace BackEndApi.Brain
         }
 
 
-        public async Task CreateImageAsync(string inputText)
+        public async Task<String> CreateImageAsync(string inputText)
         {
             Console.WriteLine("Starting commandline for DALL-E [Open AI]");
 
@@ -44,12 +44,13 @@ namespace BackEndApi.Brain
             var prompt = new GenerateImageRequest(msg, nImages, imageSize);
 
             var result = await aiClient.GenerateImages(prompt);
+            var fullPath = "";
 
             foreach (var item in result.Data)
             {
                 Console.WriteLine(item.Url);
 
-                var fullPath = Path.Combine(Directory.GetCurrentDirectory(), $"{Guid.NewGuid()}.png");
+                fullPath = Path.Combine(Directory.GetCurrentDirectory(), $"{Guid.NewGuid()}.png");
                 var img = await aiClient.DownloadImage(item.Url);
 
                 await File.WriteAllBytesAsync(fullPath, img);
@@ -58,8 +59,8 @@ namespace BackEndApi.Brain
             }
 
             Console.WriteLine("Press any key to exit");
-            Console.ReadKey();
-
+            //Console.ReadKey();
+            return fullPath;
         }
 
         static IConfiguration BuildConfig()
