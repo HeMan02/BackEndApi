@@ -46,11 +46,15 @@ namespace BackEndApi.Brain
             var result = await aiClient.GenerateImages(prompt);
             var fullPath = "";
 
+            //string[] filesToDelete = Directory.GetFiles(@"D:\Repo\FrontEndApi\src\assets", "imageToAdd.png");
+            //File.Delete(filesToDelete[0]);
+
             foreach (var item in result.Data)
             {
                 Console.WriteLine(item.Url);
 
-                fullPath = Path.Combine(Directory.GetCurrentDirectory(), $"{Guid.NewGuid()}.png");
+                //fullPath = Path.Combine(Directory.GetCurrentDirectory(), $"{ Guid.NewGuid()}.png");
+                fullPath = Path.Combine(@"D:\Repo\FrontEndApi\src\assets\", $"imageToAdd.png");
                 var img = await aiClient.DownloadImage(item.Url);
 
                 await File.WriteAllBytesAsync(fullPath, img);
