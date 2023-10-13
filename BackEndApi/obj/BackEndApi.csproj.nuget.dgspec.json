@@ -48,6 +48,10 @@
               "target": "Package",
               "version": "[35.0.1403, )"
             },
+            "MailKit": {
+              "target": "Package",
+              "version": "[4.2.0, )"
+            },
             "Microsoft.Extensions.Configuration": {
               "target": "Package",
               "version": "[7.0.0, )"

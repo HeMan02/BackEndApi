@@ -10,7 +10,7 @@ using sharpPDF;
 using sharpPDF.Enumerators;
 using Syncfusion.Pdf;
 using Syncfusion.Pdf.Graphics;
-using static Org.BouncyCastle.Math.Primes;
+/*sing static Org.BouncyCastle.Math.Primes;*/
 
 namespace BackEndApi.Brain
 {

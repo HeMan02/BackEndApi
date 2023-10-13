@@ -8,4 +8,10 @@ namespace BackEndApi.PayloadObjects
 
         [DataMember] public string inputText { get; set; }
     }
+
+    public class inputPayloadMail
+    {
+        [DataMember] public string inputText { get; set; }
+        [DataMember] public string inputMail { get; set; }
+    }
 }

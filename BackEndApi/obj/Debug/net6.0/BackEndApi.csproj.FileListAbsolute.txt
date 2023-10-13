@@ -167,3 +167,11 @@ D:\Repo\BackEndApiRepo\BackEndApi\bin\Debug\net6.0\Microsoft.Extensions.Logging.
 D:\Repo\BackEndApiRepo\BackEndApi\bin\Debug\net6.0\Microsoft.Extensions.Logging.Abstractions.dll
 D:\Repo\BackEndApiRepo\BackEndApi\bin\Debug\net6.0\Microsoft.Extensions.Options.dll
 D:\Repo\BackEndApiRepo\BackEndApi\bin\Debug\net6.0\Microsoft.Extensions.Primitives.dll
+D:\Repo\BackEndApiRepo\BackEndApi\bin\Debug\net6.0\BouncyCastle.Cryptography.dll
+D:\Repo\BackEndApiRepo\BackEndApi\bin\Debug\net6.0\MailKit.dll
+D:\Repo\BackEndApiRepo\BackEndApi\bin\Debug\net6.0\MimeKit.dll
+D:\Repo\BackEndApiRepo\BackEndApi\bin\Debug\net6.0\System.Formats.Asn1.dll
+D:\Repo\BackEndApiRepo\BackEndApi\bin\Debug\net6.0\System.Security.Cryptography.Pkcs.dll
+D:\Repo\BackEndApiRepo\BackEndApi\bin\Debug\net6.0\System.Text.Encoding.CodePages.dll
+D:\Repo\BackEndApiRepo\BackEndApi\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Security.Cryptography.Pkcs.dll
+D:\Repo\BackEndApiRepo\BackEndApi\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Text.Encoding.CodePages.dll

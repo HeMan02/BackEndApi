@@ -59,7 +59,6 @@ namespace BackEndApi.Controllers
             return "value";
         }
 
-        // GET api/<MainController>/5
         [HttpPost("StartCreationPicture")]
         public string StartCreationPicture([FromForm] inputPayload inputValue)
         {
@@ -67,6 +66,15 @@ namespace BackEndApi.Controllers
             String pathImage = BubbleMain.Instance.CreationPicture(text);
             String nameFile = Path.GetFileName(pathImage);
             return nameFile;
+        }
+
+        [HttpPost("StartSendMail")]
+        public string StartSendMail([FromForm] inputPayloadMail inputValue)
+        {
+            string text = inputValue.inputText;
+            string mail= inputValue.inputMail;
+            BubbleMain.Instance.StartSendMail(text,mail);
+            return "";
         }
     }
 }
