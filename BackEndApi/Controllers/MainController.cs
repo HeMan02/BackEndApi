@@ -76,5 +76,13 @@ namespace BackEndApi.Controllers
             BubbleMain.Instance.StartSendMail(text,mail);
             return "";
         }
+
+        [HttpGet("StartGetSaintOfDay")]
+        public string StartGetSaintOfDay()
+        {
+
+            BubbleMain.Instance.StartGetSaintOfDay();
+            return "";
+        }
     }
 }

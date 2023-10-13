@@ -94,5 +94,12 @@ namespace BackEndApi.Brain
             }
 
         }
+
+
+        public void StartGetSaintOfDay()
+        {
+            string a = "";
+        }
+            
     }
 }
