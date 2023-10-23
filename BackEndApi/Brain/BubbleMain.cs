@@ -98,8 +98,20 @@ namespace BackEndApi.Brain
 
         public void StartGetSaintOfDay()
         {
-            string a = "";
-        }
-            
+
+            string path = "D:\\Desktop\\FolderProject\\SantiDelGiorno.xls";
+
+            DataTable SaintTable = ExcelLibrary.Instance.GetDataTableFromXls(path);
+
+            string op;
+            int countRow=0;
+
+            foreach (DataRow row in SaintTable.Rows)
+            {
+                op = "insert into bubble.saint_day (mese,giorno,nome,tipo,frase) values ('" + row["mese"].ToString() + "'," + row["giorno"].ToString() + ",'" + row["nome"].ToString() + "','" + row["tipo"].ToString() + "','" + row["frase"].ToString() + "')";
+                MyConnection.Instance.UploadOnDbFromDatatable(op);
+                countRow++;
+            }
+        }          
     }
 }

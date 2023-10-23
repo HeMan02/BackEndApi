@@ -54,5 +54,34 @@ namespace BackEndApi.General
                 return dati;
             }
         }
+
+        public int UploadOnDbFromDatatable(string queryOp)
+        {
+            try
+            {
+                string testConn = "SERVER=localhost;Port=3306;DATABASE=;UID=root;PASSWORD=example;CONNECT TIMEOUT=28800;";
+                int rowUpdate;
+                using (var connection = new MySqlConnection(testConn))
+                {
+                    connection.Open();
+                    //var dati = new DataTable();
+                    using (MySqlCommand cmd = connection.CreateCommand())
+                    {
+                        cmd.CommandText = queryOp;
+                        cmd.CommandTimeout = 28800;
+                        rowUpdate = cmd.ExecuteNonQuery();
+                    }
+
+                    connection.Close();
+                    return rowUpdate;
+                }
+
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("errore: " + e.Message);
+                return -1;
+            }
+        }
     }
 }
