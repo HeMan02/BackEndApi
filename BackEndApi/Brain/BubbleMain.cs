@@ -28,7 +28,7 @@ namespace BackEndApi.Brain
         {
             DataTable testTable = new DataTable();
 
-            testTable = MyConnection.Instance.GetDataFromDb();
+            testTable = MyConnection.Instance.GetDataFromDb("");
         }
         public void CreationPdf()
         {
@@ -96,15 +96,28 @@ namespace BackEndApi.Brain
         }
 
 
-        public void StartGetSaintOfDay()
+        public DataTable StartGetSaintOfDay()
         {
 
+            string giorno = DateTime.Now.Day.ToString();
+            
+            string mese = DateTime.Now.ToString("MMMM");
+            mese = char.ToUpper(mese[0]) + mese.Substring(1);
+
+            string table = "bubble.saint_day";
+            DataTable SaintTable = MyConnection.Instance.GetDataFromSaintTableOfDay(table,giorno,mese);
+            return SaintTable;
+        } 
+
+
+        public void UploadExcelOnDbSaintOfDay()
+        {
             string path = "D:\\Desktop\\FolderProject\\SantiDelGiorno.xls";
 
             DataTable SaintTable = ExcelLibrary.Instance.GetDataTableFromXls(path);
 
             string op;
-            int countRow=0;
+            int countRow = 0;
 
             foreach (DataRow row in SaintTable.Rows)
             {
@@ -112,6 +125,11 @@ namespace BackEndApi.Brain
                 MyConnection.Instance.UploadOnDbFromDatatable(op);
                 countRow++;
             }
-        }          
+        }
+        
+        public void StispayTest()
+        {
+            
+        }
     }
 }

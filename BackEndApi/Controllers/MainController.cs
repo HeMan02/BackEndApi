@@ -1,6 +1,9 @@
 ﻿using BackEndApi.Brain;
 using BackEndApi.PayloadObjects;
 using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
+using System.Data;
+using System.Text.Json.Serialization;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -81,7 +84,15 @@ namespace BackEndApi.Controllers
         public string StartGetSaintOfDay()
         {
 
-            BubbleMain.Instance.StartGetSaintOfDay();
+           DataTable saintOfDayTable = BubbleMain.Instance.StartGetSaintOfDay();
+            return JsonConvert.SerializeObject(saintOfDayTable);
+        }
+
+        [HttpGet("StartUploadSaintOfDayOnDb")]
+        public string StartUploadSaintOfDayOnDb()
+        {
+
+            BubbleMain.Instance.UploadExcelOnDbSaintOfDay();
             return "";
         }
     }

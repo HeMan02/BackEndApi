@@ -32,7 +32,7 @@ namespace BackEndApi.General
             public string connectionString;
         }
 
-        public DataTable GetDataFromDb()
+        public DataTable GetDataFromDb(string table)
         {
 
             string testConn = "SERVER=localhost;Port=3306;DATABASE=;UID=root;PASSWORD=example;CONNECT TIMEOUT=28800;";
@@ -42,7 +42,30 @@ namespace BackEndApi.General
 
                 connection.Open();
                 var dati = new DataTable();
-                using (MySqlCommand cmd = new MySqlCommand("SELECT *  FROM main.NewTable", connection))
+                using (MySqlCommand cmd = new MySqlCommand("SELECT *  FROM " + table, connection))
+                {
+                    cmd.CommandTimeout = 28800;
+                    MySqlDataReader reader = cmd.ExecuteReader();
+                    dati.Load(reader);
+                }
+
+                connection.Close();
+
+                return dati;
+            }
+        }
+
+        public DataTable GetDataFromSaintTableOfDay(string table,string giorno, string mese)
+        {
+
+            string testConn = "SERVER=localhost;Port=3306;DATABASE=;UID=root;PASSWORD=example;CONNECT TIMEOUT=28800;";
+
+            using (var connection = new MySqlConnection(testConn))
+            {
+
+                connection.Open();
+                var dati = new DataTable();
+                using (MySqlCommand cmd = new MySqlCommand("SELECT *  FROM " + table + " WHERE mese='" + mese + "' and giorno=" + giorno , connection))
                 {
                     cmd.CommandTimeout = 28800;
                     MySqlDataReader reader = cmd.ExecuteReader();
